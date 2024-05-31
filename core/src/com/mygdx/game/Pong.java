@@ -16,18 +16,22 @@ public class Pong extends ApplicationAdapter {
 	Engine engine;
 
 	LeftPaddle leftPaddle;
+	RightPaddle rightPaddle;
+	Ball ball;
 
 
 	@Override
 	public void create () {
 		engine = new Engine(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
-		leftPaddle = new LeftPaddle(new Vector2(-250f, -100f), new Sprite(new Texture("leftPaddle.png")), new ID());
+		leftPaddle = new LeftPaddle(new Vector2(-250f, -50), new Sprite(new Texture("leftPaddle.png")), new ID());
+		rightPaddle = new RightPaddle(new Vector2(250f, -50), new Sprite(new Texture("rightPaddle.png")), new ID());
+		ball = new Ball(new Vector2(400,0), new Sprite(new Texture("ball.png")), new ID(), rightPaddle, leftPaddle);
 	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
+		ScreenUtils.clear(0, 0, 0, 1);
 
 		engine.update();
 

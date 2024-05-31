@@ -27,7 +27,7 @@ public class GameObject {
     public Sprite sprite;
 
     /** */
-    ArrayList<GameObject> collidingObjects;
+    public ArrayList<GameObject> collidingObjects;
 
     /** Determines if the colliding objects list gets updated*/
     private boolean updateCollisions = false;
